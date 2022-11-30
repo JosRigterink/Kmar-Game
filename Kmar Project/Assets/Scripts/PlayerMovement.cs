@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Vector3 direction;
-    public float gravity;
     public float strength;
     public float speed;
     public float fuel;
 
+    public bool alive = true;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (alive == true)
         {
-            direction = Vector3.up * strength;
+            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+            {
+                GetComponent<Rigidbody>().velocity = Vector3.up * strength;
+            }
         }
 
         if (Input.touchCount > 0)
@@ -26,11 +30,25 @@ public class PlayerMovement : MonoBehaviour
                 direction = Vector3.up * strength;
             }
         }
-        direction.y += gravity * Time.deltaTime;
+
+        //fuel
+        fuel -= 2 * Time.deltaTime;
+        
+        if (fuel <= 0)
+        {
+            fuel = 0;
+            alive = false;
+        }
+
+        //clamping
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -5.1f, 10.0f);
+        transform.position = clampedPosition;
+    }
+
+    private void FixedUpdate()
+    {
         transform.position += direction * Time.deltaTime;
         transform.position += Vector3.forward * speed * Time.deltaTime;
-
-        fuel -=2 * Time.deltaTime;
-        
     }
 }
