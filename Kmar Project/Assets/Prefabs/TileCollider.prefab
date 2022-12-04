@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 111037231410754033}
   - component: {fileID: 7662528030614031033}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: TileCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

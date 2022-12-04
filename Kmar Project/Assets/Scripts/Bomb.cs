@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform)
+        if (collision.gameObject.tag == "Player")
+        {
+            return;
+        }
+        else
         {
             Destroy(gameObject);
         }

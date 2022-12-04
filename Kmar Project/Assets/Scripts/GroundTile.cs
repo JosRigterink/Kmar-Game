@@ -33,10 +33,4 @@ public class GroundTile : MonoBehaviour
 
         Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity, transform);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
