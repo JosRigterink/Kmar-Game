@@ -81,12 +81,17 @@ public class Turret : MonoBehaviour
         GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();
 
-        if (bullet != null)
-        {
-            bullet.targetSeek(target);
-        }
+        Destroy(bulletGameObject, 3f);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == ("Obstacle"))
+        {
+            Destroy(other.gameObject);
+            return;
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

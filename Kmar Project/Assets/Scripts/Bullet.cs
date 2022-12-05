@@ -7,31 +7,22 @@ public class Bullet : MonoBehaviour
 
     public float speed = 70f;
 
-    public void targetSeek (Transform _target)
-    {
-        target = _target;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         float distanceThisFrame = speed * Time.deltaTime;
 
         transform.Translate(transform.up * distanceThisFrame, Space.World);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.GetComponent<PlayerStats>() == null)
         {
-           Debug.Log("destroyed itself");
-           Destroy(gameObject);
+            return;
         }
+        Debug.Log("destroyed itself");
+        other.gameObject.GetComponent<PlayerStats>().currentHealth -= 10f;
+        Destroy(gameObject);
     }
 }

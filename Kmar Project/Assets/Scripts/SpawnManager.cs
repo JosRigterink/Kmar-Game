@@ -11,15 +11,8 @@ public class SpawnManager : MonoBehaviour
         tileSpawner = GetComponent<TileSpawner>(); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnTriggerEntered()
     {
-        //tileSpawner.MoveTile();
         Destroy(gameObject, 2);
     }
 }

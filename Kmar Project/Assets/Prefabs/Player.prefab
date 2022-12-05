@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4325792147512184411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.95, z: 0}
+  m_LocalPosition: {x: 0, y: -0.957, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 4325792149078298354}
   - component: {fileID: 4325792149078298355}
   - component: {fileID: 4325792149078298352}
+  - component: {fileID: 3408113310253015917}
   - component: {fileID: 4325792149078298367}
   m_Layer: 0
   m_Name: Player
@@ -162,6 +163,20 @@ MonoBehaviour:
   speed: 5
   fuel: 100
   alive: 1
+--- !u!114 &3408113310253015917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325792149078298353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42792898f98e43245ba7c2cf30117320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  fuel: 0
 --- !u!54 &4325792149078298367
 Rigidbody:
   m_ObjectHideFlags: 0

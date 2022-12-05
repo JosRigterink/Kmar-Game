@@ -13,6 +13,11 @@ public class Bomb : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            if (collision.gameObject.tag == "Enemy")
+            {
+                GameManager.instance.points++;
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

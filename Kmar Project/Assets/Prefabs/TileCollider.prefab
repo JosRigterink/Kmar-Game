@@ -196,7 +196,10 @@ MonoBehaviour:
     type: 3}
   tallObstaclePrefab: {fileID: 1679215281722028584, guid: 14c27621c78d8674da5f39459e05a98b,
     type: 3}
+  turretPrefab: {fileID: 5365309948034555111, guid: a35891444a8beda4d9a92a63bd2eff33,
+    type: 3}
   tallObstacleChance: 0.2
+  turretSpawnChance: 0.1
 --- !u!1 &3059843640254686944
 GameObject:
   m_ObjectHideFlags: 0
