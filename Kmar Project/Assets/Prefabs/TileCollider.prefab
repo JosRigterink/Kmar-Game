@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5811272815405184329}
   - component: {fileID: 3662564844456373017}
   - component: {fileID: 6247192669297749312}
+  - component: {fileID: 5337900711853442420}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5337900711853442420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412230806076315659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72b7185eaca31942a290f69309842de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1180908107318643119
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458453893961168712}
   m_Layer: 0
-  m_Name: powerupSpawn
+  m_Name: FuelSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180908107318643119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,7 +184,6 @@ GameObject:
   - component: {fileID: 8331420955267007396}
   - component: {fileID: 111037231410754033}
   - component: {fileID: 7662528030614031033}
-  - component: {fileID: 3979383683392461945}
   m_Layer: 0
   m_Name: TileCollider
   m_TagString: Untagged
@@ -233,21 +245,13 @@ MonoBehaviour:
     type: 3}
   tankPrefab: {fileID: 8866254928600351048, guid: d437fce23fdb9cd4987296d34fccbe0f,
     type: 3}
+  fuelPrefab: {fileID: 2874322093705787245, guid: b4fa26c272a1d3440a1a9982048d0de4,
+    type: 3}
   tallObstacleChance: 0.2
   turretSpawnChance: 0.1
   tankSpawnChance: 0.08
---- !u!114 &3979383683392461945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2974370685226498652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72b7185eaca31942a290f69309842de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  fuelChance: 1
+  fuelSpawnPoint: {fileID: 1458453893961168712}
 --- !u!1 &3059843640254686944
 GameObject:
   m_ObjectHideFlags: 0

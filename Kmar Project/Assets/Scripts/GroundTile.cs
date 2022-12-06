@@ -9,9 +9,12 @@ public class GroundTile : MonoBehaviour
     [SerializeField] GameObject tallObstaclePrefab;
     [SerializeField] GameObject turretPrefab;
     [SerializeField] GameObject tankPrefab;
+    [SerializeField] GameObject fuelPrefab;
     [SerializeField] float tallObstacleChance = 0.2f;
     [SerializeField] float turretSpawnChance;
     [SerializeField] float tankSpawnChance;
+    [SerializeField] float fuelChance;
+    [SerializeField] Transform fuelSpawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,7 @@ public class GroundTile : MonoBehaviour
     {
         GameObject obstacleToSpawn = obstaclePrefab;
         float random = Random.Range(0f, 1f);
+        float randomFuel = Random.Range(0f,50f);
         if (random < tallObstacleChance)
         {
             obstacleToSpawn = tallObstaclePrefab;
@@ -44,6 +48,11 @@ public class GroundTile : MonoBehaviour
         if (random < tankSpawnChance)
         {
             obstacleToSpawn = tankPrefab;
+        }
+
+        if (randomFuel < fuelChance)
+        {
+            Instantiate(fuelPrefab, fuelSpawnPoint.position, Quaternion.identity, transform);
         }
 
         int obstacleSpawnIndex = Random.Range(2, 5);

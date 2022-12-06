@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         //movement clamping
         Vector3 clampedPosition = transform.position;
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -5.1f, 10.0f);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -5.1f, 9.5f);
         transform.position = clampedPosition;
     }
 

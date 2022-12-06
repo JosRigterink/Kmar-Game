@@ -15,8 +15,8 @@ public class Bomb : MonoBehaviour
             Destroy(gameObject);
             if (collision.gameObject.tag == "Enemy")
             {
-                GameManager.instance.points++;
-                GameManager.instance.pointsText.text = "Kills: " + GameManager.instance.points;
+                GameManager.instance.kills++;
+                GameManager.instance.pointsText.text = "Kills: " + GameManager.instance.kills;
                 Destroy(collision.gameObject);
             }
         }

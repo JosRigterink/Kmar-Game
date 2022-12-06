@@ -284,8 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: HeavyTankTurret
   health: 0
-  range: 15
   damage: 5
+  range: 15
   fireRate: 0.4
   rotatePart: {fileID: 8866254927315836043}
   turnspeed: 10

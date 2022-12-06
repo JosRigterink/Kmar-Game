@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerMovement playermovement;
 
     public int distance;
-    public int points;
+    public int kills;
 
     [Header("UIelements")]
     public Image healthbarImage;

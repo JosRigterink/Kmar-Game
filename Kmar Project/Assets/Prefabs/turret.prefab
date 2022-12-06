@@ -146,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: tankTurret
   health: 0
-  range: 10
   damage: 10
+  range: 12
   fireRate: 0.8
   rotatePart: {fileID: 5365309948924805412}
   turnspeed: 10

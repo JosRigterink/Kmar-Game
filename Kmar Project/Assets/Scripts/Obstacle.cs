@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerMovement>().alive = false;
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100f);
         }
     }
 }
