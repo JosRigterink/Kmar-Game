@@ -81,7 +81,7 @@ public class Turret : MonoBehaviour
         GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();
 
-        Destroy(bulletGameObject, 3f);
+        Destroy(bulletGameObject, 2f);
     }
 
     private void OnTriggerEnter(Collider other)

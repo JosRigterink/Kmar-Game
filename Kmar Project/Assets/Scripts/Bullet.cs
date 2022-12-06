@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
+    public float damage;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +23,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         Debug.Log("destroyed itself");
-        other.gameObject.GetComponent<PlayerStats>().currentHealth -= 10f;
+        other.gameObject.GetComponent<PlayerStats>().currentHealth -= damage;
         Destroy(gameObject);
     }
 }
