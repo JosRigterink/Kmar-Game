@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
 
     public int distance;
     public int points;
-    
+
+    [Header("UIelements")]
+    public GameObject gameOverScreen;
+    public GameObject highscoreScreen;
 
     private void Awake()
     {
