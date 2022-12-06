@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform target;
-
-    public float speed = 70f;
+    public float speed;
     public float damage;
 
     // Update is called once per frame
@@ -23,7 +21,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         Debug.Log("destroyed itself");
-        other.gameObject.GetComponent<PlayerStats>().currentHealth -= damage;
+        other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         Destroy(gameObject);
     }
 }

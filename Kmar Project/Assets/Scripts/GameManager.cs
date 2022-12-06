@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +14,12 @@ public class GameManager : MonoBehaviour
     public int points;
 
     [Header("UIelements")]
+    public Image healthbarImage;
+    public Image fuelbarImage;
     public GameObject gameOverScreen;
     public GameObject highscoreScreen;
+    public TMP_Text distanceText;
+    public TMP_Text pointsText;
 
     private void Awake()
     {
@@ -24,15 +30,11 @@ public class GameManager : MonoBehaviour
     {
         playermovement.speed += playermovement.speedIncrease;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Mathf.RoundToInt(player.transform.position.z);
+        distance = Mathf.RoundToInt(player.transform.position.z * 2);
+        distanceText.text = distance.ToString() + "m ";
     }
 }

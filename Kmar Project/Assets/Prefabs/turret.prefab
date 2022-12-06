@@ -144,7 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc83470bc265084e890df02b2d59c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: tankTurret
+  health: 0
   range: 10
+  damage: 10
   fireRate: 0.8
   rotatePart: {fileID: 5365309948924805412}
   turnspeed: 10

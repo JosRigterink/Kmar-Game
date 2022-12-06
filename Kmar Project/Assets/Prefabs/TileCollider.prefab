@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 8331420955267007396}
   - component: {fileID: 111037231410754033}
   - component: {fileID: 7662528030614031033}
+  - component: {fileID: 3979383683392461945}
   m_Layer: 0
   m_Name: TileCollider
   m_TagString: Untagged
@@ -235,6 +236,18 @@ MonoBehaviour:
   tallObstacleChance: 0.2
   turretSpawnChance: 0.1
   tankSpawnChance: 0.08
+--- !u!114 &3979383683392461945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974370685226498652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72b7185eaca31942a290f69309842de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3059843640254686944
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
             {
                 GetComponent<Rigidbody>().velocity = Vector3.up * strength;
+                GetComponent<PlayerStats>().fuel -= 10 * Time.deltaTime;
             }
         }
 

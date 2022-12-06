@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : Enemy
 {
     private Transform target;
 
     [Header("TurretStats")]
 
-    public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
@@ -80,10 +79,12 @@ public class Turret : MonoBehaviour
         Debug.Log("shoot!");
         GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();
+        bulletGameObject.GetComponent<Bullet>().damage = damage;
 
         Destroy(bulletGameObject, 2f);
     }
 
+    //deletes obstacle if obstacle and turret spawn at same spot
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == ("Obstacle"))
@@ -92,6 +93,7 @@ public class Turret : MonoBehaviour
             return;
         }
     }
+    //shows a detectsphere range of turret
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
