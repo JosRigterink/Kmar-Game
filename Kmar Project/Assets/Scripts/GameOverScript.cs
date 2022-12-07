@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    private void Start()
+    [SerializeField] TMP_Text killsText;
+    [SerializeField] TMP_Text scoreText;
+
+    void Start()
     {
+        scoreText.text = ("Score: ") + GameManager.instance.distanceText.text;
+        killsText.text = GameManager.instance.pointsText.text;
         Cursor.lockState = CursorLockMode.None;
         if (GameManager.instance.highscore == true)
         {
