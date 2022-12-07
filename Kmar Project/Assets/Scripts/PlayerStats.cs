@@ -38,11 +38,10 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         GetComponent<PlayerMovement>().alive = false;
-        Invoke("DestroyPlayer", 2f);
-        //Destroy(gameObject);
+        Invoke("EndPlayer", 2f);
     }
 
-    void DestroyPlayer()
+    void EndPlayer()
     {
         gameObject.SetActive(false);
         GameManager.instance.gameOverScreen.SetActive(true);

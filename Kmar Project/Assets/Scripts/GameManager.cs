@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void speedincrease()
