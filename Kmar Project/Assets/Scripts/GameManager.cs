@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int distance;
     public int kills;
+    public bool highscore;
 
     [Header("UIelements")]
     public Image healthbarImage;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject highscoreScreen;
     public TMP_Text distanceText;
     public TMP_Text pointsText;
+    public TMP_Text highscoreText;
+    public TMP_Text highscoreUI;
 
     private void Awake()
     {
@@ -27,9 +30,21 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void speedincrease()
+    void Start()
     {
-        playermovement.speed += playermovement.speedIncrease;
+        highscoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+        highscoreUI.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+    } 
+
+    public void HighScore()
+    {
+        if (distance > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", distance);
+            highscoreText.text = "Highscore: " + distance.ToString();
+            highscoreUI.text = "Highscore: " + distance.ToString();
+            highscore = true;
+        }
     }
 
     // Update is called once per frame
@@ -37,5 +52,6 @@ public class GameManager : MonoBehaviour
     {
         distance = Mathf.RoundToInt(player.transform.position.z * 2);
         distanceText.text = distance.ToString() + "m ";
+        HighScore();
     }
 }

@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour
             Destroy(gameObject);
             GameObject explosion =  Instantiate(explosionFX, transform.position, Quaternion.identity);
             Destroy(explosion, 1);
+
             if (collision.gameObject.tag == "Enemy")
             {
                 GameManager.instance.kills++;

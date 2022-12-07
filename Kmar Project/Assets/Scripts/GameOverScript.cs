@@ -8,6 +8,10 @@ public class GameOverScript : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        if (GameManager.instance.highscore == true)
+        {
+            GameManager.instance.highscoreScreen.SetActive(true);
+        }
     }
 
     public void Restart()
