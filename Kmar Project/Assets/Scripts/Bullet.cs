@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public float damage;
+    public float speed; //bullet speed
+    public float damage; //bullet damage
 
-    // Update is called once per frame
     void Update()
     {
+        //bullet movement
         float distanceThisFrame = speed * Time.deltaTime;
 
         transform.Translate(transform.up * distanceThisFrame, Space.World);
     }
 
+    //if bullet hits the player he does damage and destroys itself.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerStats>() == null)

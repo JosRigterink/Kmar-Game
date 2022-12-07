@@ -5,14 +5,16 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     TileSpawner tileSpawner;
-    // Start is called before the first frame update
     void Start()
     {
         tileSpawner = GetComponent<TileSpawner>(); 
     }
 
+    //oldscript
+
     public void SpawnTriggerEntered()
     {
-        Destroy(gameObject, 2);
+        //destroys tile after 2 seconds
+        //Destroy(gameObject, 2);
     }
 }

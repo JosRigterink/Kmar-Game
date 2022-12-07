@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 111037231410754033}
   - component: {fileID: 7662528030614031033}
   m_Layer: 0
-  m_Name: TileCollider
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,9 +247,9 @@ MonoBehaviour:
     type: 3}
   fuelPrefab: {fileID: 2874322093705787245, guid: b4fa26c272a1d3440a1a9982048d0de4,
     type: 3}
-  tallObstacleChance: 0.2
-  turretSpawnChance: 0.1
-  tankSpawnChance: 0.08
+  tallObstacleChance: 0.4
+  turretSpawnChance: 0.3
+  tankSpawnChance: 0.3
   fuelChance: 1
   fuelSpawnPoint: {fileID: 1458453893961168712}
 --- !u!1 &3059843640254686944

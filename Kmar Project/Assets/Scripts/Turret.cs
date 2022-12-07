@@ -13,12 +13,14 @@ public class Turret : Enemy
 
     [Header("TurretSetupField")]
 
-    public Transform rotatePart;
     public float turnspeed = 15f;
 
     public GameObject bulletPrefab;
+    [HideInInspector]
     public Transform firePoint;
-  
+    [HideInInspector]
+    public Transform rotatePart;
+
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -26,6 +28,7 @@ public class Turret : Enemy
 
     void UpdateTarget()
     {
+        //looks for nearest target
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestPlayer = null;
@@ -39,6 +42,7 @@ public class Turret : Enemy
             }
         }
 
+        //cant find target target is nothing
         if (nearestPlayer != null && shortestDistance <= range)
         {
             target = nearestPlayer.transform;
@@ -50,7 +54,6 @@ public class Turret : Enemy
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
@@ -58,13 +61,13 @@ public class Turret : Enemy
             return;
         }
 
-        //target lock on
+        //locks on nearest target and looks at it
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotatePart.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
         rotatePart.rotation = lookRotation;
       
-
+        //firerate of the turret
         if (fireCountdown <= 0f)
         {
             Shoot();
@@ -74,6 +77,7 @@ public class Turret : Enemy
         fireCountdown -= Time.deltaTime;
     }
 
+    //turret shooting spawning bullets
     void Shoot()
     {
         Debug.Log("shoot!");

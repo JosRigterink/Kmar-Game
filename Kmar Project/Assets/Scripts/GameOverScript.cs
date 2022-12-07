@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    [SerializeField] TMP_Text killsText;
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text killsText;  //kills text on gameOverScreen
+    [SerializeField] TMP_Text scoreText;  //scoreText on gameOverScreen
 
     void Start()
     {

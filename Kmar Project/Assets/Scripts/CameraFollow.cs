@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] Transform player;
     Vector3 offset;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //camera offset
         offset = transform.position - player.position;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
+        //camera follows player
         Vector3 targetPos = player.position + offset;
         targetPos.x = 10;
         targetPos.y = 4;

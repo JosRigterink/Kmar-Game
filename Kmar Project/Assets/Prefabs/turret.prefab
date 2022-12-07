@@ -572,14 +572,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: tankTurret
   health: 0
-  damage: 10
+  damage: 15
   range: 12
   fireRate: 0.8
-  rotatePart: {fileID: 5365309948924805412}
   turnspeed: 10
   bulletPrefab: {fileID: 1348441671520758433, guid: 84c92abe2de48d74bb211c7c708b9c7f,
     type: 3}
   firePoint: {fileID: 198417822}
+  rotatePart: {fileID: 5365309948924805412}
 --- !u!54 &5142312107314297339
 Rigidbody:
   m_ObjectHideFlags: 0
