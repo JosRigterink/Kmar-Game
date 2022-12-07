@@ -27,7 +27,6 @@ public class GroundTile : MonoBehaviour
         {
             tileSpawner.SpawnTile(true);
             Destroy(gameObject, 2);
-            GameManager.instance.speedincrease();
         }
     }
 
