@@ -26,12 +26,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //makes the gameManager an instance
         instance = this;
+        //locks mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Start()
     {
+        //
         highscoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
         highscoreUI.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     } 
